@@ -1,0 +1,125 @@
+<!DOCTYPE html> {% load staticfiles %}
+
+<html>
+
+<head>
+    <title>Survey {% block title %}{% endblock %} Page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="gruppo pulcrano">
+    <meta name=theme-color content=#00CEE6 />
+    <meta name=apple-mobile-web-app-status-bar-style content=#00CEE6>
+    <meta name=msapplication-navbutton-color content=#00CEE6>
+    <!-- style  and bs -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/medias.css' %}">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+    <!-- iconfont -->
+    <script src="https://use.fontawesome.com/a8f6feea50.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top" id="my-nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'survey'%}">SURVEY</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" id="menu-items">
+                    <li>
+                        <a href="{% url 'survey'%}"><i class="icon icon icon-mini"></i>Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'info'%}"><!--<i class="icon icon-man icon-mini"></i>-->Istruzioni</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'profile'%}"><!--<i class="icon icon-man icon-mini"></i>-->Profilo</a>
+                    </li>
+                    <!-- @ilfonty BEGIN-->
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout'%}">Disconnettiti</a></li>
+                    <li id="user"><i class="fa fa-user-circle-o"></i> Ciao {{ user.get_short_name }}</li>
+                    {% else %}
+                    <li><a href="{% url 'login'%}">Collegati</a></li>
+                    {% endif %}
+                    <!-- @ilfonty END-->
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+
+    <!-- page content -->
+    <div class="container" id="main-cont">
+        <div class="row">
+            <!-- il contenuto del template base è nelle pagine survey e ...--->
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+
+    <!--footer start from here-->
+    <footer>
+        <div class="borderissimo"></div>
+        <div class="container">
+            <div class="row">
+                <div class="footer-content">
+                    <div class="col-md-6 col-sm-12 minidesc">
+                        <h6>Survey</h6>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <p><i class="fa fa-map-pin"></i> indirizzo Comune n 11</p>
+                        <p><i class="fa fa-phone"></i> Telefono(IT) : +39 9999 878 398</p>
+                        <p><i class="fa fa-envelope"></i> E-mail : info@survey.com</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h6 class="heading7">Link Utili</h6>
+                        <ul class="footer-ul">
+                            <li><a href="{% url 'info'%}"> Info </a></li>
+                            <li><a href="#"> Sito Comune</a></li>
+                            <li><a href="{% url 'logout'%}"> Logout</a></li>
+                            <li><a href="#"> Site map</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+        <div class="container">
+            <div class="col-md-12">
+                <p>©Survey 2017 - All Rights reserved</p>
+            </div>
+        </div>
+    </div>
+    </footer>
+    <!--footer ends here -->
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!--<script href="{% static 'js/survey.js' %}"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+     <script type="text/javascript">
+        function unlock(cekb, btn) {
+            if(cekb.checked) {
+                document.getElementById(btn).disabled = false;
+            } else {
+                document.getElementById(btn).disabled = 'disabled';
+            }
+	}
+    </script>
+</body>
+
+</html>

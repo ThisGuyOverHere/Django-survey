@@ -1,0 +1,137 @@
+/*----------------------------------------------------------------
+* CSS for survey medias file
+* author: Framo
+* date 11-10-2017
+*
+* main colors
+* ligth-green: #00F4B9
+* light blue: #00CEE6
+* personal black: #212121
+* personal withe: #FDFDFD
+* personal grey: #c7c7c7
+* gradient: linear-gradient(-180deg, #00CEE6 0%, #00F4B9 95%);
+*
+*-----------------------------------------------------------------*/
+@media (min-width: 768px){
+    .navbar-nav {
+        float: right;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    #login #form-container {
+        width: 350px;
+        height: 285px;
+        top: 50%;
+        transform: translateY(35%);
+    }
+    #signin #form-container {
+        width: 370px;
+        height: 758px;
+        top: 40%;
+        transform: translateY(5%);
+    }
+    #signin .btn {
+        padding: 5px 12px;
+        margin: 10px 0px 50px 180px;
+    }
+    .survey-card {
+        width: 400px;
+        height: 350px;
+    }
+    .question-container {
+        width: 400px;
+        height: auto;
+        margin: 0px auto;
+    }
+    #update #form-container {
+        width: 380px;
+        height: 520px;
+    }
+    #update #form-container button {
+        margin: 40px auto;
+    }
+    .question-report{
+        width: 360px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #login #form-container {
+        width: 300px;
+        height: 285px;
+        top: 40%;
+        transform: translateY(25%);
+    }
+    #login .btn {
+        padding: 5px 12px;
+        margin: 40px 0px 0px 100px;
+    }
+    #signin #form-container {
+        width: 300px;
+        height: 848px;
+        top: 40%;
+        transform: translateY(8%);
+    }
+    #signin h1,
+    login h1 {
+        font-size: 3em;
+    }
+    #signin .btn {
+        padding: 5px 12px;
+        margin: 0px 0px 10px 115px;
+    }
+    .survey-card {
+        width: 310px;
+        height: 360px;
+    }
+    .survey-card h2 {
+        font-size: 30px;
+    }
+    .survey-card p {
+        font-size: 18px;
+    }
+    .question-container {
+        width: 310px;
+        height: auto;
+        margin: 50px auto;
+    }
+    .question-container h2 {
+        font-size: 30px;
+        text-align: left;
+        padding-left: 10px;
+    }
+    #vote-btn {
+        margin-bottom: 40px;
+    }
+    .profile-card{
+        width: 310px;
+        height: 370px;
+        margin: 40px auto;
+    }
+    .profile-card ul li {
+        font-size: 20px;
+    }
+    .profile-card a.btn-update {
+        margin: 18px 0px 0px 0px;
+    }
+    #update #form-container {
+        width: 300px;
+        height: 500px;
+        padding: 5px;
+    }
+    #update #form-container button {
+        margin: 40px auto;
+    }
+    #pass-form{
+        width: 300px;
+    }
+    #pass-reset-form #pass-reset-input {
+         width: 290px;
+    }
+    .question-report{
+        width: 310px;
+    }
+}
+

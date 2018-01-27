@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="col md 12" id="info">
+    <h1>Team Pulcrano</h1>
+
+        <p>Welcome to <em>Survey</em>, a responsive Django website, developed to try out the new Django Framework.</p>
+
+    <h2>Il Progetto</h2>
+
+    <h3>Funzionalità Utente</h3>
+    <ul>
+        <li>Registrazione</li>
+        <li>Login</li>
+        <li>Recupero Password</li>
+        <li>Modifica Profilo</li>
+        <li>Registrazione</li>
+        <li>Partecipazione sondaggio</li>
+    </ul>
+
+    <h3>Funzionalità Amministratore</h3>
+    <ul>
+        <li>Gestione <b>Utenti</b> (Create,Edit,Delete)</li>
+        <li>Gestione dei <b>Gruppi</b> (ruoli) e delle <b>Autorizzazioni</b> per gli utenti</li>
+        <li>Gestione modulare dei sondaggi</li>
+        <ol>
+            <li>Creazione, Modifica, Eliminazione di n <b>Survey</b></li>
+            <li>Creazione, Modifica, Eliminazione di n <b>Topic</b> per ogni Survey</li>
+            <li>Creazione, Modifica, Eliminazione di n <b>Question</b> (con relative Risposte) per ogni Topic</li>
+
+        </ol>
+        <li>Visualizzazione a video di un <b>Report</b>, organizzato per Topic, di tutte le risposte date.</li>
+    </ul>
+
+        <h3>Istruzioni per l'uso</h3>
+    <p>L'utente deve come prima cosa effettuare il login o registrarsi all'interno del portale. La registrazione avviene
+        inserendo dati essenziali e caricando il file della propria carta d'identità (pdf o jpeg). Una volta registrato,
+        l'utente potrà modificare il proprio profilo ed inserire i dati mancanti.<br>
+        I sondaggi disponibili sono mostrati all'utente (previa autenticazione tramite login) e gli vengono sottoposti una sola volta.
+        I sondaggi completati vengono automaticamente esclusi dall'elenco dei sondaggi disponibili, mentre restano presenti i sondaggi
+        iniziati ma non completati.<br> Una volta espresso il voto, ovvero scelta la risposta, non è più possibile modificarla, neanche tramite
+        il tasto "indietro" del browser: la schermata di voto viene ricreata, ma il voto non viene comunque alterato fornedo una risposta diversa.
+        Il risultato dei sondaggi è visibile allo "Staff" nel pannello dell'amministratore (accessibile solo agli utenti autorizzati)
+        attraverso la funzione "Report", accessibile di fianco ogni sondaggio presente all'interno della lista dei sondaggi esistenti.<br>
+        Per verificare la funzione di cambio password, implementata con un backend mail per evitare invio di mail reali, basterà
+       seguire la procedura. Una volta richiesto il cambio, la mail che dovrebbe essere inviata viene in realtà salvata nella cartella
+    "sent_mails". All'interno del file è presente il link da incollare nel browser per completare la procedura.</p>
+</div>
+{% endblock %}

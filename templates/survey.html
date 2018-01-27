@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="survey-page">Sondaggi Disponibili</h1>
+<!-- ciclo for ??? -->
+
+    {% if not surveys %}
+            <div class="col-md-12" id="completed" >
+                <i class="fa fa-trophy"></i>
+                <h2> Congratulazioni! tutti i sondaggi sono completati</h2>
+            </div>
+        {% endif %}
+{% for survey in surveys %}
+
+<div class="col-md-12 survey-card">
+    <div class="main-info">
+        <h2>{{ survey.survey_title }}</h2>
+        <p>{{ survey.survey_description }}</p>
+    </div>
+    <hr>
+    <div class="info-container">
+        <p><span>Domande</span> : {{ survey.num_questions }} </p>
+        <p><span>Tempo</span> : 2 minuti </p>
+    </div>
+    <div class="btn-container">
+        <a href="{% url 'question' survey.id survey.topic_set.first.id survey.topic_set.first.question_set.first.id %}">
+            <button><i class="fa fa-check fa-2x"></i><p>Esegui</p></button>
+        </a>
+        <!-- manca la funzione elimina sondaggio per chi non vuole eseguirlo -->
+        <button><i class="fa fa-times fa-2x"></i><p>Salta</p></button>
+    </div>
+</div>
+<hr> {% endfor %} {% endblock %}

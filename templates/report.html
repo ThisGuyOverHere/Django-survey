@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Report-Questionario{% endblock %}
+
+{% block content %}
+<h2> REPORT </h2>
+{% for topic, questions in data.items %}
+<h3 class="report-txt">Topic: {{ topic }}</h3>
+	{% for element in questions %}
+	<div class="col-md-12 question-report">
+		<h3>{{ element.question.question_text }}</h3>
+		<p><span>{{ element.question.answer_1 }} - {{ element.percentage_1 }}%</span> - ({{ element.question.votes_1 }}/{{ element.total_votes }})</p>
+		<p><span>{{ element.question.answer_2 }} - {{ element.percentage_2 }}%</span> - ({{ element.question.votes_2 }}/{{ element.total_votes }})</p>
+		<p><span>{{ element.question.answer_3 }} - {{ element.percentage_3 }}%</span> - ({{ element.question.votes_3 }}/{{ element.total_votes }})</p>
+	</div>
+	{% endfor %}
+{% endfor %}
+{% endblock %}

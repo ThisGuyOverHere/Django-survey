@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Il tuo profilo</h2>
+<div class="col-md-12 profile-card">
+    <ul>
+        <li><i class="fa fa-address-card"></i> Carta: <span>{{ user.id_card }}</span></li>
+        <li><i class="fa fa-envelope"></i> Email: <span>{{ user.email }}</span></li>
+        <li><i class="fa fa-user"></i> Nome: <span>{{ user.first_name }}</span></li>
+        <li><i class="fa fa-user"></i> Cognome: <span>{{ user.last_name }}</span></li>
+        <li><i class="fa fa-calendar"></i> Data di nascita: <span>{{ user.date_of_birth }}</span></li>
+        <li><i class="fa fa-file-text"></i> Bio: <span>{{ user.bio }}</span></li>
+    </ul>
+    <a href="{% url 'edit_profile' %}" class="btn btn-update">Modifica</a>
+    <a href="{% url 'change_password' %}" class="btn btn-update">Cambia Password</a>
+</div>
+{% endblock %}

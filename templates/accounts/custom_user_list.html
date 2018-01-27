@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Lista utenti</h2>
+    {% if users_list %}
+    <ul>
+        {% for user in users_list %}
+        <li>
+            <a href="{{ user.get_absolute_url }}">{{ user.id_card }}</a>{{ user.email }} - Admin:{{ user.is_admin }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>Non ci sono utenti attivi.</p>
+    {% endif %}
+{% endblock %}

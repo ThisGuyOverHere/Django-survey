@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<div class="col-md-12" id="update">
+    <h2> Aggiorna Dati </h2>
+    <form class="form-group" id="form-container" method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <button class="btn btn-edit" type="submit">Aggiorna</button>
+    </form>
+</div>
+{% endblock %}

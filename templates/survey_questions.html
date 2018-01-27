@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Questionario{% endblock %}
+
+{% block content %}
+
+<h1 class="questions-page">Domande</h1>
+
+    <h1> {{ x }}</h1>
+
+<!-- ciclo for ??? qui c'è il problema -->
+    <div class="col-md-12 questions-lis">
+        {% for question in questions.all %}
+        <div class="question">
+            <h3>{{ question.question_text }}</h3>
+            <p>{{ question.answer_1 }}</p>
+            <p>{{ question.answer_2 }}</p>
+            <p>{{ question.answer_3 }}</p>
+        </div>
+        <hr>
+        {% endfor %}
+        <div class="btn-submit-questions">
+            <button><i class="icon icon-accept"></i><p>Invia</p></button>
+            <button><i class="icon icon-close"></i><p>Annulla</p></button>
+        </div>
+    </div>
+    <hr>-->
+
+{% endblock %}

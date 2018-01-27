@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Team Pulcrano</h1>
+
+        <p>Welcome to <em>Survey</em>, a responsive Django website, developed to try out the new Django Framework.</p>
+
+    <h2>Contenuti</h2>
+
+      <ul>
+        <li><strong><a href="{% url 'survey' %}">Surveys:</a> </strong> {{ num_surveys }}</li>
+      </ul>
+
+{% endblock %}
